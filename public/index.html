@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZalaStore | Pesanan simulasi</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div><p class="eyebrow">Katalog pilihan</p><h1>ZalaStore</h1></div>
+        <div class="topbar-actions">
+          <button id="refreshButton" class="ghost-button" type="button">Muat ulang</button>
+          <button id="themeToggle" class="ghost-button" type="button" aria-pressed="false">Tema gelap</button>
+        </div>
+      </header>
+      <p class="demo-note">Demo pesanan. Tidak ada uang yang ditagih atau pembayaran yang diproses.</p>
+
+      <section class="account-panel" id="accountPanel" aria-labelledby="accountHeading">
+        <div class="account-heading"><h2 id="accountHeading">Masuk untuk menyimpan pesanan</h2><p id="accountDescription">Katalog dan keranjang dapat dicoba sebelum masuk.</p></div>
+        <form id="authForm">
+          <label>Nama akun<input id="username" autocomplete="username" required minlength="3" maxlength="32" pattern="[A-Za-z0-9][A-Za-z0-9_.\-]{2,31}" disabled /></label>
+          <label>Password<input id="password" type="password" autocomplete="current-password" required maxlength="72" disabled /></label>
+          <div class="auth-actions"><button id="authSubmit" class="primary-button" type="submit" disabled>Masuk</button><button id="authMode" class="ghost-button" type="button" disabled>Buat akun baru</button></div>
+        </form>
+        <button id="logoutButton" class="ghost-button" type="button" hidden>Keluar</button>
+        <p id="accountMessage" class="status-line" role="status">Form aktif setelah JavaScript dan sesi selesai dimuat. Jika tetap nonaktif, periksa koneksi lalu muat ulang halaman.</p>
+        <noscript><p>Aktifkan JavaScript untuk masuk atau membuat pesanan. Form tetap nonaktif agar kredensial tidak terkirim melalui alamat halaman.</p></noscript>
+      </section>
+
+      <main class="layout">
+        <section class="catalog" aria-labelledby="catalogHeading">
+          <div class="hero"><img src="/assets/zalastore-products.png" alt="Koleksi tas, sepatu, jam, dan perlengkapan harian" /><div class="hero-copy"><p class="eyebrow">Pilihan sehari-hari</p><h2 id="catalogHeading">Dari meja kerja sampai perjalanan.</h2></div></div>
+          <div class="toolbar" aria-label="Filter katalog">
+            <label class="search-field">Cari produk<input id="searchInput" type="search" placeholder="tas, audio, sepatu..." /></label>
+            <label>Kategori<select id="categoryFilter"><option value="all">Semua</option><option value="fashion">Fashion</option><option value="tech">Tech</option><option value="beauty">Beauty</option><option value="home">Home</option></select></label>
+            <label>Urutkan<select id="sortFilter"><option value="featured">Pilihan katalog</option><option value="priceAsc">Harga terendah</option><option value="priceDesc">Harga tertinggi</option><option value="stock">Stok terbanyak</option></select></label>
+          </div>
+          <p id="catalogMessage" class="status-line" role="status">Memuat katalog...</p>
+          <div id="productGrid" class="product-grid" aria-busy="true"></div>
+        </section>
+        <aside class="checkout-panel" aria-labelledby="cartHeading">
+          <section class="panel-block">
+            <div class="section-heading"><h2 id="cartHeading">Keranjang</h2><strong id="cartCount">0</strong></div>
+            <div id="cartItems" class="cart-items"></div>
+            <button id="clearCart" class="ghost-button clear-cart" type="button" disabled>Kosongkan keranjang</button>
+          </section>
+          <section class="panel-block">
+            <div class="totals"><div><span>Subtotal</span><strong id="subtotal">Rp0</strong></div><div><span>Ongkir contoh</span><strong id="shipping">Rp0</strong></div><div><span>Biaya simulasi 11%</span><strong id="tax">Rp0</strong></div><div class="grand-total"><span>Total simulasi</span><strong id="grandTotal">Rp0</strong></div></div>
+            <button id="checkoutButton" class="primary-button checkout-button" type="button" disabled>Buat pesanan simulasi</button>
+            <p id="checkoutMessage" class="status-line" role="status"></p>
+          </section>
+        </aside>
+      </main>
+      <section class="workspace" aria-label="Pesanan dan ringkasan">
+        <section class="orders" aria-labelledby="ordersHeading"><div class="section-heading"><h2 id="ordersHeading">Pesanan Anda</h2></div><div id="orderList" class="order-list"></div></section>
+        <section class="invoice" aria-labelledby="invoiceTitle"><div class="section-heading"><h2 id="invoiceTitle">Rincian pesanan</h2></div><div id="invoiceBody" class="invoice-body"><p class="empty">Pilih pesanan untuk melihat rinciannya.</p></div></section>
+        <section class="admin" id="adminPanel" aria-labelledby="adminHeading" hidden><div class="section-heading"><h2 id="adminHeading">Ringkasan admin</h2></div><div id="adminBody" class="admin-body"></div></section>
+      </section>
+      <footer>Data dan biaya pada katalog ini digunakan untuk latihan pemesanan.</footer>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

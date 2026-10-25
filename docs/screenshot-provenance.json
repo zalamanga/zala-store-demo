@@ -1,0 +1,59 @@
+{
+  "runtime": "PHP 8.5.12 CLI NTS x64",
+  "browser": "Google Chrome 155.0.8059.85 headless",
+  "platform": "Windows",
+  "device_scale_factor": 1,
+  "capture_date": "2026-10-26",
+  "no_real_payment": true,
+  "source_asset_unchanged": true,
+  "files": [
+    {
+      "file": "screenshots/catalogue-desktop.png",
+      "sha256": "690dad39ffe59f4082aaa694308e150ec2266065058195219699ad05cac90e6a",
+      "image_pixels": {
+        "width": 1440,
+        "height": 1914
+      },
+      "viewport_css_pixels": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capture": "full-page",
+      "genuine_browser_capture": true,
+      "edited": false,
+      "synthetic_fixture": true
+    },
+    {
+      "file": "screenshots/mobile-dark.png",
+      "sha256": "85c3237fed9f550221eb9ab377c78dd735bac43d862d3195b2bae80587b967bf",
+      "image_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "viewport_css_pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "capture": "viewport",
+      "genuine_browser_capture": true,
+      "edited": false,
+      "synthetic_fixture": true
+    },
+    {
+      "file": "screenshots/admin-summary.png",
+      "sha256": "84a98465e561ad652bfaeb411a401e550ccf4be41f0a8b7bec31baf6bcfa18b7",
+      "image_pixels": {
+        "width": 1400,
+        "height": 247
+      },
+      "viewport_css_pixels": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capture": "admin summary element",
+      "genuine_browser_capture": true,
+      "edited": false,
+      "synthetic_fixture": true
+    }
+  ]
+}
